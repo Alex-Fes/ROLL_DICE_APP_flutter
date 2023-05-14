@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 
+import 'dice_roller.dart';
+
 class MyGradientContainer extends StatelessWidget {
-  const MyGradientContainer({super.key});
+  const MyGradientContainer(this.colors, this.startAligment, this.endAligment,
+      {super.key});
+
+  final List<Color> colors;
+  final AlignmentGeometry startAligment;
+  final AlignmentGeometry endAligment;
 
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 118, 59, 219),
-            Color.fromARGB(255, 66, 32, 124)
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          colors: colors,
+          begin: startAligment,
+          end: endAligment,
         ),
       ),
       child: const Center(
-        child: Text(
-          'Hello World!! Ebanina :)',
-          style: TextStyle(color: Colors.white, fontSize: 28),
-        ),
+        child: DiceRoller(),
+
+        // child: MyTextWidget('Hello World!! Ebanina :)'),
       ),
     );
   }
