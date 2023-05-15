@@ -3,6 +3,7 @@ import 'package:roll_dice_app/my_gradient_container.dart';
 
 const startAligment = Alignment.topLeft;
 const endAligment = Alignment.bottomRight;
+
 void main() {
   runApp(
     const MaterialApp(
